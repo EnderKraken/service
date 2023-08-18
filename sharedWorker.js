@@ -1,9 +1,3 @@
-var i = 0;
-
-function timedCount() {
-  i = i + 1;
-  postMessage(i);
-  setTimeout("timedCount()",500);
+self.onmessage = function(e) {
+  postMessage('Worker: '+e.data);
 }
-
-timedCount();
